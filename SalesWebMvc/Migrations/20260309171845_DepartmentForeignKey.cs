@@ -17,12 +17,12 @@ namespace SalesWebMvc.Migrations
             migrationBuilder.RenameColumn(
                 name: "SellerId",
                 table: "SalesRecord",
-                newName: "SellersId");
+                newName: "SellerId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_SalesRecord_SellerId",
                 table: "SalesRecord",
-                newName: "IX_SalesRecord_SellersId");
+                newName: "IX_SalesRecord_SellerId");
 
             migrationBuilder.AlterColumn<int>(
                 name: "DepartmentId",
@@ -32,9 +32,9 @@ namespace SalesWebMvc.Migrations
                 oldNullable: true);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_SalesRecord_Seller_SellersId",
+                name: "FK_SalesRecord_Seller_SellerId",
                 table: "SalesRecord",
-                column: "SellersId",
+                column: "SellerId",
                 principalTable: "Seller",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
@@ -51,7 +51,7 @@ namespace SalesWebMvc.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_SalesRecord_Seller_SellersId",
+                name: "FK_SalesRecord_Seller_SellerId",
                 table: "SalesRecord");
 
             migrationBuilder.DropForeignKey(
